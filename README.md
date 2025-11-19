@@ -1,4 +1,4 @@
-# 🚀 Token Management Service
+# 🚀 Сервис управления токенами
 
 <div align="center">
 
@@ -7,92 +7,92 @@
 [![SQLite](https://img.shields.io/badge/SQLite-0.21.0-003B57?style=flat-square&logo=sqlite&logoColor=white)](https://sqlite.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
-**Modern web service for creating, validating and managing temporary tokens with automatic cleanup**
+**Современный веб-сервис для создания, проверки и управления временными токенами с автоматической очисткой**
 
-[✨ Features](#-features) • [🔧 Installation](#-installation) • [🚀 Quick Start](#-quick-start) • [📚 API Reference](#-api-reference) • [💡 Usage Examples](#-usage-examples)
+[✨ Возможности](#-возможности) • [🔧 Установка](#-установка) • [🚀 Быстрый старт](#-быстрый-старт) • [📚 Справочник API](#-справочник-api) • [💡 Примеры использования](#-примеры-использования)
 
 </div>
 
 ---
 
-## 🌟 Overview
+## 🌟 Обзор
 
-Token Management Service is a high-performance FastAPI-based service designed for secure token generation, validation, and automated lifecycle management. Built with modern Python async architecture, it provides reliable temporary token functionality for authentication systems, API key management, and security workflows.
+Сервис управления токенами — это высокопроизводительный сервис на базе FastAPI, предназначенный для безопасной генерации, валидации и автоматического управления жизненным циклом токенов. Построенный с использованием современной асинхронной архитектуры Python, он обеспечивает надёжную функциональность временных токенов для систем аутентификации, управления API-ключами и процессов безопасности.
 
-### 🎯 Key Capabilities
+### 🎯 Ключевые возможности
 
-- **⚡ High Performance**: Async/await architecture for concurrent request handling
-- **🔒 Secure Generation**: Cryptographically secure token creation with customizable TTL
-- **🧹 Auto Cleanup**: Automatic expiration and removal of stale tokens
-- **📊 Structured API**: Consistent JSON responses across all endpoints
-- **🔍 Comprehensive Logging**: Detailed request/response monitoring with timing metrics
-
----
-
-## ✨ Features
-
-### 🔑 Token Operations
-- **Generate unique tokens** with customizable time-to-live (TTL)
-- **Validate token authenticity** with automatic expiration handling
-- **Bulk cleanup operations** for expired tokens
-- **Structured error handling** with meaningful status codes
-
-### 🏗️ Architecture Benefits
-- **🚀 FastAPI Framework** - High performance, automatic API documentation
-- **🗄️ SQLite Database** - Zero-configuration, production-ready storage
-- **⚡ Async Operations** - Non-blocking I/O for maximum throughput
-- **📈 Scalable Design** - Ready for horizontal scaling and load balancing
-
-### 🛡️ Security Features
-- **🔐 Cryptographic Security** - Secure random token generation
-- **⏰ Automatic Expiration** - Time-based token invalidation
-- **🧹 Data Cleanup** - Prevents database bloat from expired tokens
-- **📝 Audit Logging** - Complete operation traceability
+- **⚡ Высокая производительность**: Архитектура async/await для обработки параллельных запросов
+- **🔒 Безопасная генерация**: Криптографически безопасное создание токенов с настраиваемым TTL
+- **🧹 Автоочистка**: Автоматическое истечение и удаление устаревших токенов
+- **📊 Структурированный API**: Согласованные JSON-ответы во всех endpoints
+- **🔍 Комплексное логирование**: Детальный мониторинг запросов/ответов с метриками времени
 
 ---
 
-## 🔧 Installation
+## ✨ Возможности
 
-### Prerequisites
-- Python 3.8 or higher
-- pip package manager
+### 🔑 Операции с токенами
+- **Генерация уникальных токенов** с настраиваемым временем жизни (TTL)
+- **Валидация подлинности токенов** с автоматической обработкой истечения
+- **Массовые операции очистки** для истёкших токенов
+- **Структурированная обработка ошибок** со значимыми кодами статуса
 
-### Setup
+### 🏗️ Преимущества архитектуры
+- **🚀 Фреймворк FastAPI** - высокая производительность, автоматическая документация API
+- **🗄️ База данных SQLite** - нулевая конфигурация, готовое к production хранилище
+- **⚡ Асинхронные операции** - неблокирующий I/O для максимальной пропускной способности
+- **📈 Масштабируемый дизайн** - готов к горизонтальному масштабированию и балансировке нагрузки
 
-1. **Clone the repository**
+### 🛡️ Функции безопасности
+- **🔐 Криптографическая безопасность** - безопасная случайная генерация токенов
+- **⏰ Автоматическое истечение** - временная инвалидация токенов
+- **🧹 Очистка данных** - предотвращает разрастание БД устаревшими токенами
+- **📝 Аудитное логирование** - полная трассируемость операций
+
+---
+
+## 🔧 Установка
+
+### Предварительные требования
+- Python 3.8 или выше
+- Менеджер пакетов pip
+
+### Настройка
+
+1. **Клонируйте репозиторий**
 ```bash
-git clone <repository-url>
+git clone https://github.com/NEFORCEO/token-manager-api.git
 cd token-management-service
 ```
 
-2. **Install dependencies**
+2. **Установите зависимости**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Run the application**
+3. **Запустите приложение**
 ```bash
 python main.py
 ```
 
-The service will be available at `http://localhost:8000`
+Сервис будет доступен по адресу `http://localhost:8000`
 
-### 📖 API Documentation
-Once running, visit:
+### 📖 Документация API
+После запуска посетите:
 - **Swagger UI**: `http://localhost:8000/docs`
 - **ReDoc**: `http://localhost:8000/redoc`
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Быстрый старт
 
-### 1. Generate a Token
+### 1. Сгенерировать токен
 ```bash
 curl -X POST "http://localhost:8000/app/token" \
   -H "Content-Type: application/json"
 ```
 
-**Response:**
+**Ответ:**
 ```json
 {
   "status_code": 200,
@@ -100,12 +100,12 @@ curl -X POST "http://localhost:8000/app/token" \
 }
 ```
 
-### 2. Validate a Token
+### 2. Валидировать токен
 ```bash
 curl "http://localhost:8000/app/valid/754321:xyz9AbC2DeF3GhI4JkL"
 ```
 
-**Response:**
+**Ответ:**
 ```json
 {
   "status_code": 200,
@@ -113,12 +113,12 @@ curl "http://localhost:8000/app/valid/754321:xyz9AbC2DeF3GhI4JkL"
 }
 ```
 
-### 3. Clean Expired Tokens
+### 3. Очистить истёкшие токены
 ```bash
 curl -X DELETE "http://localhost:8000/app/clear/all/tokens"
 ```
 
-**Response:**
+**Ответ:**
 ```json
 {
   "status_code": 200,
@@ -128,27 +128,27 @@ curl -X DELETE "http://localhost:8000/app/clear/all/tokens"
 
 ---
 
-## 📚 API Reference
+## 📚 Справочник API
 
-### Base URL
+### Базовый URL
 ```
 http://localhost:8000
 ```
 
-### Endpoints Overview
+### Обзор endpoints
 
-| Method | Endpoint | Description | Response |
+| Метод | Endpoint | Описание | Ответ |
 |--------|----------|-------------|----------|
-| `POST` | `/app/token` | Generate new token | Token object |
-| `GET` | `/app/valid/{token}` | Validate token | Status boolean |
-| `DELETE` | `/app/clear/all/tokens` | Clean expired tokens | Operation status |
+| `POST` | `/app/token` | Генерация нового токена | Объект токена |
+| `GET` | `/app/valid/{token}` | Валидация токена | Булев статус |
+| `DELETE` | `/app/clear/all/tokens` | Очистка истёкших токенов | Статус операции |
 
-### 📝 Detailed Endpoint Documentation
+### 📝 Подробная документация endpoints
 
 #### POST `/app/token`
-Creates a new unique token with default 60-minute TTL.
+Создаёт новый уникальный токен с TTL по умолчанию 60 минут.
 
-**Response Format:**
+**Формат ответа:**
 ```json
 {
   "status_code": 200,
@@ -157,9 +157,9 @@ Creates a new unique token with default 60-minute TTL.
 ```
 
 #### GET `/app/valid/{token}`
-Validates token authenticity and automatically removes expired tokens.
+Валидирует подлинность токена и автоматически удаляет истёкшие токены.
 
-**Response Format:**
+**Формат ответа:**
 ```json
 {
   "status_code": 200,
@@ -168,9 +168,9 @@ Validates token authenticity and automatically removes expired tokens.
 ```
 
 #### DELETE `/app/clear/all/tokens`
-Removes all tokens with expired time-to-live.
+Удаляет все токены с истёкшим временем жизни.
 
-**Response Format:**
+**Формат ответа:**
 ```json
 {
   "status_code": 200,
@@ -180,171 +180,154 @@ Removes all tokens with expired time-to-live.
 
 ---
 
-## 💡 Usage Examples
+## 💡 Примеры использования
 
-### 🔐 Authentication Systems
+### 🔐 Системы аутентификации
 ```python
 import requests
 
-# Generate password reset token
+# Генерация токена сброса пароля
 response = requests.post("http://localhost:8000/app/token")
 reset_token = response.json()["token"]
 
-# Later, validate the token
+# Позже, валидация токена
 validation_response = requests.get(f"http://localhost:8000/app/valid/{reset_token}")
 is_valid = validation_response.json()["status"]
 ```
 
-### 🏷️ API Key Management
+### 🏷️ Управление API ключами
 ```python
-# Create temporary API key
+# Создание временного API ключа
 response = requests.post("http://localhost:8000/app/token")
 api_key = response.json()["token"]
 
-# Use in API calls
+# Использование в API вызовах
 headers = {"Authorization": f"Bearer {api_key}"}
 api_response = requests.get("https://api.example.com/data", headers=headers)
 ```
 
-### 📱 Mobile App Sessions
-```javascript
-// JavaScript example for mobile app
-const generateSessionToken = async () => {
-  const response = await fetch('http://localhost:8000/app/token', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' }
-  });
-  const data = await response.json();
-  return data.token;
-};
 
-const validateSession = async (token) => {
-  const response = await fetch(`http://localhost:8000/app/valid/${token}`);
-  return response.json();
-};
-```
-
-### 🔄 Automated Cleanup
+### 🔄 Автоматическая очистка
 ```bash
 #!/bin/bash
-# Add to crontab for regular cleanup
+# Добавить в crontab для регулярной очистки
 0 */6 * * * curl -X DELETE "http://localhost:8000/app/clear/all/tokens"
 ```
 
 ---
 
-## 🎪 Use Cases
+## 🎪 Области применения
 
-### 🛡️ Security Applications
-- **Password Reset**: Time-limited reset tokens with automatic expiration
-- **Email Verification**: Secure confirmation tokens for user registration
-- **Two-Factor Authentication**: Temporary codes for multi-factor verification
+### 🛡️ Приложения безопасности
+- **Сброс пароля**: Временные токены сброса с автоматическим истечением
+- **Верификация email**: Безопасные токены подтверждения для регистрации пользователей
+- **Двухфакторная аутентификация**: Временные коды для многофакторной верификации
 
-### 🔑 API Management
-- **Temporary Access Keys**: Short-lived API keys for third-party integrations
-- **Rate Limiting**: Token-based request throttling and quota management
-- **Microservices Auth**: Inter-service authentication tokens
+### 🔑 Управление API
+- **Временные ключи доступа**: Краткосрочные API ключи для сторонних интеграций
+- **Ограничение скорости**: Токен-основанное ограничение запросов и управление квотами
+- **Аутентификация микросервисов**: Токены аутентификации между сервисами
 
-### 📱 Mobile & Web Apps
-- **Session Management**: User session tokens with automatic invalidation
-- **One-time Actions**: Confirmation tokens for critical operations
-- **Guest Access**: Temporary access tokens for anonymous users
+### 📱 Мобильные и веб-приложения
+- **Управление сессиями**: Пользовательские токены сессий с автоматической инвалидацией
+- **Одноразовые действия**: Токены подтверждения для критических операций
+- **Гостевой доступ**: Временные токены доступа для анонимных пользователей
 
-### 🏢 Enterprise Solutions
-- **Single Sign-On (SSO)**: Federated authentication tokens
-- **Audit Trails**: Compliant token tracking and logging
-- **Zero-Trust Security**: Continuous validation and automatic token rotation
+### 🏢 Корпоративные решения
+- **Единый вход (SSO)**: Федеративные токены аутентификации
+- **Аудитные следы**: Соответствующее требованиям отслеживание и логирование токенов
+- **Zero-Trust безопасность**: Непрерывная валидация и автоматическая ротация токенов
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Архитектура
 
 ```
-📦 Project Structure
-├── 🚀 main.py              # Application entry point
+📦 Структура проекта
+├── 🚀 main.py              # Точка входа в приложение
 ├── 🔌 api/
-│   └── api.py              # API routes and handlers
+│   └── api.py              # Маршруты API и обработчики
 ├── 🏗️ core/
-│   └── token_utils.py      # Token generation and validation logic
+│   └── token_utils.py      # Логика генерации и валидации токенов
 ├── 🗄️ db/
-│   ├── models.py           # Database models
-│   ├── session.py          # Database session management
-│   └── base.py             # Database base configuration
+│   ├── models.py           # Модели базы данных
+│   ├── session.py          # Управление сессиями базы данных
+│   └── base.py             # Базовая конфигурация базы данных
 ├── 📋 schemas/
-│   ├── types_schema.py     # Pydantic schemas for requests
-│   └── validate_schema.py  # Validation schemas
+│   ├── types_schema.py     # Pydantic схемы для запросов
+│   └── validate_schema.py  # Схемы валидации
 ├── ⚙️ client/
-│   └── config/             # Application configuration
-├── 🎬 client/lifespan/     # Application lifecycle management
-└── 📝 log/                 # Logging configuration
+│   └── config/             # Конфигурация приложения
+├── 🎬 client/lifespan/     # Управление жизненным циклом приложения
+└── 📝 log/                 # Конфигурация логирования
 ```
 
-### 🔄 Data Flow
-1. **Request Processing**: FastAPI receives and validates incoming requests
-2. **Business Logic**: Core utilities handle token generation/validation
-3. **Database Operations**: Async SQLAlchemy manages persistent storage
-4. **Response Formatting**: Structured JSON responses with consistent schema
-5. **Logging**: Comprehensive audit trail with performance metrics
+### 🔄 Поток данных
+1. **Обработка запросов**: FastAPI получает и валидирует входящие запросы
+2. **Бизнес-логика**: Основные утилиты обрабатывают генерацию/валидацию токенов
+3. **Операции с БД**: Async SQLAlchemy управляет постоянным хранилищем
+4. **Форматирование ответа**: Структурированные JSON ответы с согласованной схемой
+5. **Логирование**: Комплексный аудитный след с метриками производительности
 
 ---
 
-## 📊 Performance & Monitoring
+## 📊 Производительность и мониторинг
 
-### ⚡ Performance Metrics
-- **Response Time**: < 100ms for token operations
-- **Throughput**: 1000+ concurrent requests
-- **Memory Usage**: Optimized async/await pattern
-- **Database**: Indexed queries for fast lookups
+### ⚡ Метрики производительности
+- **Время ответа**: < 100мс для операций с токенами
+- **Пропускная способность**: 1000+ параллельных запросов
+- **Использование памяти**: Оптимизированный паттерн async/await
+- **База данных**: Индексированные запросы для быстрых поисков
 
-### 📈 Monitoring Capabilities
-- **Real-time Logging**: All operations logged with timestamps
-- **Performance Tracking**: Response time measurement per request
-- **Error Handling**: Structured error responses and logging
-- **Health Checks**: Built-in endpoint monitoring
+### 📈 Возможности мониторинга
+- **Логирование в реальном времени**: Все операции логируются с временными метками
+- **Отслеживание производительности**: Измерение времени ответа для каждого запроса
+- **Обработка ошибок**: Структурированные ответы об ошибках и логирование
+- **Проверки здоровья**: Встроенный мониторинг endpoints
 
-### 🔍 Available Metrics
-- Request/response counts
-- Average response times
-- Error rates and types
-- Database query performance
-- Token generation/validation statistics
+### 🔍 Доступные метрики
+- Количество запросов/ответов
+- Среднее время ответа
+- Частота ошибок и типы
+- Производительность запросов к БД
+- Статистика генерации/валидации токенов
 
 ---
 
-## 🛠️ Configuration
+## 🛠️ Конфигурация
 
-### 🔧 Environment Variables
-Configure the application through environment variables:
+### 🔧 Переменные окружения
+Настройте приложение через переменные окружения:
 
 ```bash
-# Application settings
-export APP_TITLE="Token Management Service"
-export APP_DESCRIPTION="Modern token management solution"
+# Настройки приложения
+export APP_TITLE="Сервис управления токенами"
+export APP_DESCRIPTION="Современное решение для управления токенами"
 
-# Database configuration
+# Конфигурация базы данных
 export DATABASE_URL="sqlite:///./tokens.db"
 
-# Security settings
+# Настройки безопасности
 export SECRET_KEY="your-secret-key"
 export TOKEN_TTL_MINUTES=60
 ```
 
-### ⚙️ Custom Configuration
-Modify settings in `client/config/config.py` (configurations not shown for security):
+### ⚙️ Пользовательская конфигурация
+Измените настройки в `client/config/config.py` (конфигурации не показаны по соображениям безопасности):
 
 ```python
-# Example configuration structure
+# Пример структуры конфигурации
 class Config:
-    title = "Token Management Service"
-    description = "Modern token management solution"
-    # Additional configuration parameters...
+    title = "Сервис управления токенами"
+    description = "Современное решение для управления токенами"
+    # Дополнительные параметры конфигурации...
 ```
 
 ---
 
-## 🚀 Deployment
+## 🚀 Развертывание
 
-### 🐳 Docker Deployment
+### 🐳 Развертывание с Docker
 ```dockerfile
 FROM python:3.11-slim
 
@@ -358,55 +341,55 @@ EXPOSE 8000
 CMD ["python", "main.py"]
 ```
 
-### ☁️ Cloud Deployment
-- **Heroku**: Add `Procfile` with `web: python main.py`
-- **AWS**: Deploy with Elastic Beanstalk or ECS
-- **Google Cloud**: Use App Engine or Cloud Run
-- **DigitalOcean**: Deploy with App Platform
+### ☁️ Облачное развертывание
+- **Heroku**: Добавьте `Procfile` с `web: python main.py`
+- **AWS**: Разверните с Elastic Beanstalk или ECS
+- **Google Cloud**: Используйте App Engine или Cloud Run
+- **DigitalOcean**: Разверните с App Platform
 
-### 🔧 Production Checklist
-- [ ] Set secure SECRET_KEY environment variable
-- [ ] Configure proper DATABASE_URL for production database
-- [ ] Set up log aggregation and monitoring
-- [ ] Configure CORS settings for frontend integration
-- [ ] Set up load balancing for high availability
-- [ ] Implement rate limiting for security
-- [ ] Regular automated cleanup cron jobs
-
----
-
-## 📚 Additional Resources
-
-- **[FastAPI Documentation](https://fastapi.tiangolo.com)** - Complete API framework guide
-- **[SQLAlchemy Documentation](https://docs.sqlalchemy.org)** - Database ORM documentation
-- **[Pydantic Documentation](https://docs.pydantic.dev)** - Data validation library guide
-- **[Uvicorn Documentation](https://www.uvicorn.org)** - ASGI server documentation
+### 🔧 Чек-лист для production
+- [ ] Установите безопасную переменную окружения SECRET_KEY
+- [ ] Настройте правильный DATABASE_URL для production базы данных
+- [ ] Настройте агрегацию логов и мониторинг
+- [ ] Настройте CORS для интеграции с фронтендом
+- [ ] Настройте балансировку нагрузки для высокой доступности
+- [ ] Реализуйте ограничение скорости для безопасности
+- [ ] Регулярные автоматизированные cron jobs для очистки
 
 ---
 
-## 🤝 Contributing
+## 📚 Дополнительные ресурсы
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-### 📋 Development Setup
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- **[Документация FastAPI](https://fastapi.tiangolo.com)** - Полное руководство по фреймворку API
+- **[Документация SQLAlchemy](https://docs.sqlalchemy.org)** - Документация по ORM базы данных
+- **[Документация Pydantic](https://docs.pydantic.dev)** - Руководство по библиотеке валидации данных
+- **[Документация Uvicorn](https://www.uvicorn.org)** - Документация по ASGI серверу
 
 ---
 
-## 📄 License
+## 🤝 Вклад
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Вклады приветствуются! Пожалуйста, не стесняйтесь отправлять Pull Request. Для серьёзных изменений, пожалуйста, сначала откройте issue для обсуждения того, что вы хотели бы изменить.
+
+### 📋 Настройка для разработки
+1. Форкните репозиторий
+2. Создайте ветку для функции (`git checkout -b feature/AmazingFeature`)
+3. Зафиксируйте изменения (`git commit -m 'Add some AmazingFeature'`)
+4. Отправьте в ветку (`git push origin feature/AmazingFeature`)
+5. Откройте Pull Request
+
+---
+
+## 📄 Лицензия
+
+Этот проект лицензирован под лицензией MIT - см. файл [LICENSE](LICENSE) для подробностей.
 
 ---
 
 <div align="center">
 
-**[⬆ Back to Top](#-token-management-service)**
+**[⬆ Наверх](#-сервис-управления-токенами)**
 
-Made with ❤️ using FastAPI
+Сделано с ❤️ с использованием FastAPI
 
 </div>

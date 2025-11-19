@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from sqlalchemy import select
 
 from db.session import SessionDep
 from core.token_utils import (
@@ -10,9 +11,18 @@ from schemas.types_schema import (
     ValidateTokens,
     DeleteTokens
     )
+from schemas.validate_schema import Valid
+from db.models import Token
 
 
 router = APIRouter(prefix="/app", tags=["Выдача токена"])
+
+
+@router.get('/tokens')
+async def get_all_tokens(db: SessionDep):
+    tokens = await db.execute(select(Token))
+    return tokens.scalars().all()
+
 
 @router.post('/token', response_model=CreateTokens)
 async def create_tokens(db: SessionDep):
@@ -22,9 +32,9 @@ async def create_tokens(db: SessionDep):
         "token": token
     }
 
-@router.get("/valid/{token}", response_model=ValidateTokens)
-async def validate_tokens(token: str, db: SessionDep):
-    is_valid = await validate_token(token_value=token, db=db)
+@router.post("/valid/{token}", response_model=ValidateTokens)
+async def validate_tokens(param: Valid, db: SessionDep):
+    is_valid = await validate_token(token_value=param.token, db=db)
     return {
         "status_code": 200,
         "status": is_valid
